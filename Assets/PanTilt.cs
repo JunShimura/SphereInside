@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PanTilt : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField]
+    float rotateAngle = 0.25f;
     // Update is called once per frame
     void Update()
     {
-        
+        gameObject.transform.Rotate(0, Input.GetAxis("Horizontal") * rotateAngle, 0, Space.World);
+        gameObject.transform.Rotate( -Input.GetAxis("Vertical") * rotateAngle, 0,0);
+
+
     }
 }
